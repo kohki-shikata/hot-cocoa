@@ -1,0 +1,64 @@
+doctype html
+html.no-js(lang='ja')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Foundation for Sites
+    link(rel='stylesheet', href='/common/css/app.css')
+  body
+    header#header
+      .row
+        .column
+          h1.logo: img(src="#", alt="カフェ ホットココア")
+      .row
+        nav
+          ul
+            li: a(href="/about.html") About
+            li: a(href="/party.html") Party
+            li: a(href="/menu.html") Menu
+            li: a(href="/access.html") Access
+            li: a(href="/contact.html") Contact
+    main
+      #hero
+      nav#toppage-nav
+        .row
+          .columns.medium-6
+            a(href="/menu.html"): img(src="/common/img/bnr_top_menu.png", alt="メニュー")
+          .columns.medium-6
+            a(href="/party.html"): img(src="/common/img/bnr_top_menu.png", alt="パーティー")
+      .row
+        .columns.medium-8
+          nav#news-list
+            ul
+              - for(var i = 1; i < 5; i++) {
+              li
+                time 2016/05/11
+                p 新商品「いちごのタルト」発売開始
+              - }
+        .columns.medium-4
+          nav#side-bnr
+            ul
+              li: a(href="#"): img(src="#", alt="求人情報")
+      #calendar
+        .row
+          .columns.medium-6.gcal#thismonth
+            <iframe src="https://calendar.google.com/calendar/embed?src=indigoworks%40gmail.com&ctz=Asia/Tokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+          .columns.medium-6.gcal#nextmonth
+            iframe(src="https://calendar.google.com/calendar/embed?src=indigoworks%40gmail.com&ctz=Asia/Tokyo", style="border: 0", width="800", height="600" frameborder="0", scrolling="no")
+
+
+
+    footer#footer
+    script(src='/common/js/jquery.min.js')
+    script(src='/common/js/what-input.min.js')
+    script(src='/common/js/foundation.min.js')
+    script(src='/common/js/app.js')
+    script.
+      var date = new Date();
+      var yyyy = date.getFullYear();
+      var mm = String(date.getMonth() + 2);
+      if (mm.length === 1) {
+      mm = "0" + mm;
+      }
+      $('#nextmonth iframe').attr('src', 'https://calendar.google.com/calendar/embed?src=indigoworks%40gmail.com&ctz=Asia/Tokyo&dates='+yyyy+mm+'01/'+yyyy+mm+'02');

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation for Sites</title>
+    <link rel="stylesheet" href="/common/css/app.css">
+  </head>
+  <body>
+    <header id="header">
+      <div class="row">
+        <div class="column">
+          <h1 class="logo"><img src="#" alt="カフェ ホットココア"></h1>
+        </div>
+      </div>
+      <div class="row">
+        <nav>
+          <ul>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/party.html">Party</a></li>
+            <li><a href="/menu.html">Menu</a></li>
+            <li><a href="/access.html">Access</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div id="hero"></div>
+      <nav id="toppage-nav">
+        <div class="row">
+          <div class="columns medium-6"><a href="/menu.html"><img src="/common/img/bnr_top_menu.png" alt="メニュー"></a></div>
+          <div class="columns medium-6"><a href="/party.html"><img src="/common/img/bnr_top_menu.png" alt="パーティー"></a></div>
+        </div>
+      </nav>
+      <div class="row">
+        <div class="columns medium-8">
+          <nav id="news-list">
+            <ul>
+              <li>
+                <time>2016/05/11</time>
+                <p>新商品「いちごのタルト」発売開始</p>
+              </li>
+              <li>
+                <time>2016/05/11</time>
+                <p>新商品「いちごのタルト」発売開始</p>
+              </li>
+              <li>
+                <time>2016/05/11</time>
+                <p>新商品「いちごのタルト」発売開始</p>
+              </li>
+              <li>
+                <time>2016/05/11</time>
+                <p>新商品「いちごのタルト」発売開始</p>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="columns medium-4">
+          <nav id="side-bnr">
+            <ul>
+              <li><a href="#"><img src="#" alt="求人情報"></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div id="calendar">
+        <div class="row">
+          <div class="columns medium-6 gcal" id="thismonth"><iframe src="https://calendar.google.com/calendar/embed?src=indigoworks%40gmail.com&ctz=Asia/Tokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe></div>
+          <div class="columns medium-6 gcal" id="nextmonth">
+            <iframe src="https://calendar.google.com/calendar/embed?src=indigoworks%40gmail.com&amp;ctz=Asia/Tokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer"></footer>
+    <script src="/common/js/jquery.min.js"></script>
+    <script src="/common/js/what-input.min.js"></script>
+    <script src="/common/js/foundation.min.js"></script>
+    <script src="/common/js/app.js"></script>
+    <script>
+      var date = new Date();
+      var yyyy = date.getFullYear();
+      var mm = String(date.getMonth() + 2);
+      if (mm.length === 1) {
+      mm = "0" + mm;
+      }
+      $('#nextmonth iframe').attr('src', 'https://calendar.google.com/calendar/embed?src=indigoworks%40gmail.com&ctz=Asia/Tokyo&dates='+yyyy+mm+'01/'+yyyy+mm+'02');
+    </script>
+  </body>
+</html>
